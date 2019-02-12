@@ -12,7 +12,7 @@ fun example2(a: Any, b: Any) =
 fun example3(c: Boolean, x: Int, y: Int) = "Any expression can be used: ${if (c) x else y}"
 
 fun example4() =
-        """
+        """l
 You can use raw strings to write multiline text.
 There is no escaping here, so raw strings are useful for writing regex patterns,
 you don't need to escape a backslash by a backslash.
