@@ -10,9 +10,22 @@ fun checkElement(element: Any) {
     }
 }
 
+fun checkElementAsAnyValue(element: Any) : Any {
+    val ret = when (element) {
+        "Hello" -> "You say Hello!"
+        else -> "Sorry, i don't understand you"
+    }
+    return ret
+}
+
 fun main(args: Array<String>) {
     checkElement(1)
     checkElement("Hello")
     checkElement(2)
     checkElement(true)
+
+    val ret = checkElementAsAnyValue("Hello")
+    val ret2 = checkElementAsAnyValue(1)
+    println(ret)
+    println(ret2)
 }
