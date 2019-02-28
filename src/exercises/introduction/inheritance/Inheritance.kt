@@ -20,6 +20,16 @@ open class Tiger(val origin : String) {
 
 class AsianTiger : Tiger("China")
 
+
+open class Lion(var name : String, val origin: String) {
+    open fun sayHello() {
+        println("groarrrr i'm a furious lion from $origin and my name is $name")
+    }
+}
+
+// name in the American declaration is neither a var nor val: it's a constructor argument, whose value is passed to the name property of the superclass Lion.
+class AmericanLion(name : String) : Lion(name, "America")
+
 fun main(args: Array<String>) {
 
     val regularDog : Dog = Dog()
@@ -29,4 +39,7 @@ fun main(args: Array<String>) {
 
     val asianTiger : Tiger = AsianTiger()
     asianTiger.sayRoar()
+
+    val americanLion : Lion = AmericanLion(name = "leo")
+    americanLion.sayHello()
 }
